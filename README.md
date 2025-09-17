@@ -23,10 +23,6 @@
 - Detection: Harmonic + Classic Reversal/Inverse patterns
 - Backtesting: Vectorized backtest และสถิติเบื้องต้น (win rate, PF, max DD)
 
-**Out-of-scope (ระยะแรก)**
-- กลยุทธ์ขั้นสูงหลายพอร์ต, Portfolio optimization
-- Execution/Trading API จริง
-
 ## 4) Data & Sources
 - แหล่งข้อมูลยืดหยุ่น: `yfinance` / CSV ภายใน / อื่น ๆ ตามสิทธิ์การใช้งาน
 - ตารางชื่อสินทรัพย์: ใช้ไฟล์ชื่อหุ้นที่มีอยู่ (`stocth_names.xlsx`) เพื่อสร้าง watchlist
@@ -53,11 +49,7 @@
 - **Head & Shoulders**: โครง H-L-HH-L-H (หรือกลับด้าน) + neckline break
 - วัด **quality features**: symmetry, width, volume change, volatility regime
 
-### 5.4 Signal Confirmation
-- Indicator filters (เลือกใช้): RSI divergence, ATR regime, Volume expansion
-- Confidence = f(harmonic_score, structure_score, confirmation_signals)
-
-### 5.5 Backtesting
+### 5.4 Backtesting
 - Entry: ที่จุดยืนยัน (เช่น neckline break หรือ D-completion + confirmation)
 - Exit: SL/TP แบบสัดส่วน (เช่น 1R/2R) หรือ trailing ATR
 - Metrics: Win rate, Expectancy, Profit Factor, Max Drawdown, Sharpe (เบื้องต้น)
@@ -76,7 +68,6 @@
 ## 7) Evaluation Plan
 - **Detection metrics** (บนชุด label เล็ก ๆ ที่เราทำมือ): precision/recall per pattern
 - **Strategy metrics**: win rate, PF, max DD เทียบ buy&hold หรือ random entries
-- **Latency**: เวลาคำนวนต่อสินทรัพย์/ต่อวันข้อมูล
 
 ## 8) Risks & Mitigations
 - **ข้อมูลไม่สะอาด / gaps** → data validation + forward-fill แบบควบคุม
